@@ -1,0 +1,250 @@
+{
+  "10000": {
+    "size": 10000,
+    "results": [
+      {
+        "seed": 42,
+        "time_seconds": 0.07352471351623535,
+        "metrics": {
+          "coverage_percent": 0.51,
+          "full_coverage_percent": 0.16,
+          "latency_ms": {
+            "p50": 1.0,
+            "p95": 1.0,
+            "p99": 1.0,
+            "mean": 1.0034480571746827,
+            "std": 0.059185192008483746
+          },
+          "db_work": {
+            "total_rows_scanned": 51,
+            "total_candidate_pairs": 51,
+            "mean_rows_per_request": 0.0051,
+            "mean_pairs_per_request": 0.0051
+          },
+          "double_allocations": 0,
+          "weighted_unmet_demand": {
+            "weighted_unmet_demand": 62232040.0,
+            "weighted_demand_total": 62772040.0,
+            "weighted_unmet_ratio": 99.13974438300875,
+            "total_unmet_units": 251477.0,
+            "unmet_by_urgency": {
+              "critical": 24290.0,
+              "high": 49262.0,
+              "medium": 128131.0,
+              "low": 49794.0
+            }
+          },
+          "ground_truth_accuracy": {
+            "available": false,
+            "message": "No ground truth loaded"
+          },
+          "stale_resource_behavior": {
+            "stale_match_count": 26,
+            "total_matches": 51,
+            "stale_match_rate": 50.98039215686274
+          },
+          "reallocations": 0,
+          "accessibility": {
+            "mean_distance_km": 11.232688612102823,
+            "median_distance_km": 11.427997401194148,
+            "max_distance_km": 21.863483236267687,
+            "min_distance_km": 1.969301726565479
+          },
+          "fairness": {
+            "fulfillment_by_urgency": {
+              "critical": {
+                "rate": 5.125628140703518,
+                "full_rate": 1.6080402010050252,
+                "total": 995
+              },
+              "high": {
+                "rate": 0.0,
+                "full_rate": 0.0,
+                "total": 1937
+              },
+              "medium": {
+                "rate": 0.0,
+                "full_rate": 0.0,
+                "total": 5070
+              },
+              "low": {
+                "rate": 0.0,
+                "full_rate": 0.0,
+                "total": 1998
+              }
+            },
+            "low_urgency_starvation_rate": 100.0,
+            "wait_time_ms_by_urgency": {
+              "critical": 1.002115207203364,
+              "high": 1.0040651783231735,
+              "medium": 1.00326073851576,
+              "low": 1.0035280699247833
+            }
+          }
+        }
+      },
+      {
+        "seed": 123,
+        "time_seconds": 0.08150339126586914,
+        "metrics": {
+          "coverage_percent": 0.51,
+          "full_coverage_percent": 0.16,
+          "latency_ms": {
+            "p50": 1.0,
+            "p95": 1.0,
+            "p99": 1.0,
+            "mean": 1.003973388671875,
+            "std": 0.06382907627344937
+          },
+          "db_work": {
+            "total_rows_scanned": 51,
+            "total_candidate_pairs": 51,
+            "mean_rows_per_request": 0.0051,
+            "mean_pairs_per_request": 0.0051
+          },
+          "double_allocations": 0,
+          "weighted_unmet_demand": {
+            "weighted_unmet_demand": 62232040.0,
+            "weighted_demand_total": 62772040.0,
+            "weighted_unmet_ratio": 99.13974438300875,
+            "total_unmet_units": 251477.0,
+            "unmet_by_urgency": {
+              "critical": 24290.0,
+              "high": 49262.0,
+              "medium": 128131.0,
+              "low": 49794.0
+            }
+          },
+          "ground_truth_accuracy": {
+            "available": false,
+            "message": "No ground truth loaded"
+          },
+          "stale_resource_behavior": {
+            "stale_match_count": 26,
+            "total_matches": 51,
+            "stale_match_rate": 50.98039215686274
+          },
+          "reallocations": 0,
+          "accessibility": {
+            "mean_distance_km": 11.232688612102823,
+            "median_distance_km": 11.427997401194148,
+            "max_distance_km": 21.863483236267687,
+            "min_distance_km": 1.969301726565479
+          },
+          "fairness": {
+            "fulfillment_by_urgency": {
+              "critical": {
+                "rate": 5.125628140703518,
+                "full_rate": 1.6080402010050252,
+                "total": 995
+              },
+              "high": {
+                "rate": 0.0,
+                "full_rate": 0.0,
+                "total": 1937
+              },
+              "medium": {
+                "rate": 0.0,
+                "full_rate": 0.0,
+                "total": 5070
+              },
+              "low": {
+                "rate": 0.0,
+                "full_rate": 0.0,
+                "total": 1998
+              }
+            },
+            "low_urgency_starvation_rate": 100.0,
+            "wait_time_ms_by_urgency": {
+              "critical": 1.0041637380244368,
+              "high": 1.0023591992285181,
+              "medium": 1.0041939097748707,
+              "low": 1.004504058692787
+            }
+          }
+        }
+      },
+      {
+        "seed": 999,
+        "time_seconds": 0.07099342346191406,
+        "metrics": {
+          "coverage_percent": 0.51,
+          "full_coverage_percent": 0.16,
+          "latency_ms": {
+            "p50": 1.0,
+            "p95": 1.0,
+            "p99": 1.0,
+            "mean": 1.0033097982406616,
+            "std": 0.05759500352111649
+          },
+          "db_work": {
+            "total_rows_scanned": 51,
+            "total_candidate_pairs": 51,
+            "mean_rows_per_request": 0.0051,
+            "mean_pairs_per_request": 0.0051
+          },
+          "double_allocations": 0,
+          "weighted_unmet_demand": {
+            "weighted_unmet_demand": 62232040.0,
+            "weighted_demand_total": 62772040.0,
+            "weighted_unmet_ratio": 99.13974438300875,
+            "total_unmet_units": 251477.0,
+            "unmet_by_urgency": {
+              "critical": 24290.0,
+              "high": 49262.0,
+              "medium": 128131.0,
+              "low": 49794.0
+            }
+          },
+          "ground_truth_accuracy": {
+            "available": false,
+            "message": "No ground truth loaded"
+          },
+          "stale_resource_behavior": {
+            "stale_match_count": 26,
+            "total_matches": 51,
+            "stale_match_rate": 50.98039215686274
+          },
+          "reallocations": 0,
+          "accessibility": {
+            "mean_distance_km": 11.232688612102823,
+            "median_distance_km": 11.427997401194148,
+            "max_distance_km": 21.863483236267687,
+            "min_distance_km": 1.969301726565479
+          },
+          "fairness": {
+            "fulfillment_by_urgency": {
+              "critical": {
+                "rate": 5.125628140703518,
+                "full_rate": 1.6080402010050252,
+                "total": 995
+              },
+              "high": {
+                "rate": 0.0,
+                "full_rate": 0.0,
+                "total": 1937
+              },
+              "medium": {
+                "rate": 0.0,
+                "full_rate": 0.0,
+                "total": 5070
+              },
+              "low": {
+                "rate": 0.0,
+                "full_rate": 0.0,
+                "total": 1998
+              }
+            },
+            "low_urgency_starvation_rate": 100.0,
+            "wait_time_ms_by_urgency": {
+              "critical": 1.0010602555032504,
+              "high": 1.0036656394962435,
+              "medium": 1.0037482974562184,
+              "low": 1.0029994441462948
+            }
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+zone_id,zone_name,zone_type,risk_level,lat,lon
+efe39033-60bd-467d-aedd-4a0060eba0be,Velachery,ward,critical,12.9815,80.218
+ede33f5e-5516-4451-9254-069b65c8ecfd,Adyar,ward,high,13.0033,80.2566
+1bc0f0f8-9df0-4438-904a-164c76ae3ab8,Guindy,ward,low,13.0067,80.2206
+0cc7c017-1230-4f57-bb1b-38e7712f9384,Tambaram,ward,medium,12.9229,80.1275
+71e03a10-ef79-403b-b35c-bc82545672d3,Sholinganallur,ward,critical,12.901,80.2279

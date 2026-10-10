@@ -1,0 +1,37 @@
+{
+  "total_allocations": 4,
+  "double_allocations": 1,
+  "contended_resources": 1,
+  "allocation_details": {
+    "4c0b6d34-f208-4dc0-bfc4-5135bc752558": [
+      {
+        "thread": 0,
+        "request": "d2bbcd18-59de-48a5-8bbf-f83f59f714d7",
+        "qty": 1,
+        "time": 1791382054.6816878
+      },
+      {
+        "thread": 1,
+        "request": "ec250539-b3f6-4ada-b1e8-3f592ac67803",
+        "qty": 1,
+        "time": 1791382054.6826885
+      }
+    ],
+    "43bbeda5-e5cd-4810-b0cb-faae9f7adb1d": [
+      {
+        "thread": 2,
+        "request": "63e9dbbc-28ef-4708-8dfd-1ff2c058c5ed",
+        "qty": 1,
+        "time": 1791382054.6826885
+      }
+    ],
+    "984c7fc7-9cb8-48a5-80e5-a0069b5d66cb": [
+      {
+        "thread": 3,
+        "request": "ce3e4b73-d920-45b1-b83c-034bd2ea082b",
+        "qty": 1,
+        "time": 1791382054.6826885
+      }
+    ]
+  }
+}

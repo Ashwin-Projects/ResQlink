@@ -1,0 +1,22 @@
+{
+  "Full_Rescan": {
+    "coverage_percent": 61.1764705882353,
+    "latency_ms": {
+      "p50": 5.0,
+      "p95": 5.0,
+      "p99": 5.0
+    },
+    "rows_evaluated": 210,
+    "double_allocations": 0
+  },
+  "ResQLink_Incremental": {
+    "coverage_percent": 0.0,
+    "latency_ms": {
+      "p50": 1.0,
+      "p95": 1.0,
+      "p99": 1.0
+    },
+    "rows_evaluated": 0,
+    "double_allocations": 0
+  }
+}

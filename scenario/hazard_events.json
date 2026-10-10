@@ -1,0 +1,332 @@
+[
+  {
+    "event_id": 0,
+    "timestamp_offset_mins": 0,
+    "hazard_type": "flood",
+    "severity": "high",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.2,
+            12.97
+          ],
+          [
+            80.23,
+            12.97
+          ],
+          [
+            80.23,
+            12.99
+          ],
+          [
+            80.2,
+            12.99
+          ],
+          [
+            80.2,
+            12.97
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "event_id": 1,
+    "timestamp_offset_mins": 30,
+    "hazard_type": "flood",
+    "severity": "high",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.19500000000001,
+            12.965
+          ],
+          [
+            80.235,
+            12.965
+          ],
+          [
+            80.235,
+            12.995000000000001
+          ],
+          [
+            80.19500000000001,
+            12.995000000000001
+          ],
+          [
+            80.19500000000001,
+            12.965
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "event_id": 2,
+    "timestamp_offset_mins": 60,
+    "hazard_type": "flood",
+    "severity": "high",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.19,
+            12.96
+          ],
+          [
+            80.24000000000001,
+            12.96
+          ],
+          [
+            80.24000000000001,
+            13.0
+          ],
+          [
+            80.19,
+            13.0
+          ],
+          [
+            80.19,
+            12.96
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "event_id": 3,
+    "timestamp_offset_mins": 90,
+    "hazard_type": "flood",
+    "severity": "high",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.185,
+            12.955
+          ],
+          [
+            80.245,
+            12.955
+          ],
+          [
+            80.245,
+            13.005
+          ],
+          [
+            80.185,
+            13.005
+          ],
+          [
+            80.185,
+            12.955
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "event_id": 4,
+    "timestamp_offset_mins": 120,
+    "hazard_type": "flood",
+    "severity": "high",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.18,
+            12.950000000000001
+          ],
+          [
+            80.25,
+            12.950000000000001
+          ],
+          [
+            80.25,
+            13.01
+          ],
+          [
+            80.18,
+            13.01
+          ],
+          [
+            80.18,
+            12.950000000000001
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "event_id": 5,
+    "timestamp_offset_mins": 150,
+    "hazard_type": "flood",
+    "severity": "high",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.175,
+            12.945
+          ],
+          [
+            80.25500000000001,
+            12.945
+          ],
+          [
+            80.25500000000001,
+            13.015
+          ],
+          [
+            80.175,
+            13.015
+          ],
+          [
+            80.175,
+            12.945
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "event_id": 6,
+    "timestamp_offset_mins": 180,
+    "hazard_type": "flood",
+    "severity": "critical",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.17,
+            12.940000000000001
+          ],
+          [
+            80.26,
+            12.940000000000001
+          ],
+          [
+            80.26,
+            13.02
+          ],
+          [
+            80.17,
+            13.02
+          ],
+          [
+            80.17,
+            12.940000000000001
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "event_id": 7,
+    "timestamp_offset_mins": 210,
+    "hazard_type": "flood",
+    "severity": "critical",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.165,
+            12.935
+          ],
+          [
+            80.265,
+            12.935
+          ],
+          [
+            80.265,
+            13.025
+          ],
+          [
+            80.165,
+            13.025
+          ],
+          [
+            80.165,
+            12.935
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "event_id": 8,
+    "timestamp_offset_mins": 240,
+    "hazard_type": "flood",
+    "severity": "critical",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.16,
+            12.930000000000001
+          ],
+          [
+            80.27000000000001,
+            12.930000000000001
+          ],
+          [
+            80.27000000000001,
+            13.03
+          ],
+          [
+            80.16,
+            13.03
+          ],
+          [
+            80.16,
+            12.930000000000001
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "event_id": 9,
+    "timestamp_offset_mins": 270,
+    "hazard_type": "flood",
+    "severity": "critical",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.155,
+            12.925
+          ],
+          [
+            80.275,
+            12.925
+          ],
+          [
+            80.275,
+            13.035
+          ],
+          [
+            80.155,
+            13.035
+          ],
+          [
+            80.155,
+            12.925
+          ]
+        ]
+      ]
+    }
+  }
+]

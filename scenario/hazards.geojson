@@ -1,0 +1,73 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "flood",
+        "severity": "critical"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.2,
+              12.97
+            ],
+            [
+              80.23,
+              12.97
+            ],
+            [
+              80.23,
+              12.99
+            ],
+            [
+              80.2,
+              12.99
+            ],
+            [
+              80.2,
+              12.97
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "flood",
+        "severity": "high"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.22,
+              12.89
+            ],
+            [
+              80.25,
+              12.89
+            ],
+            [
+              80.25,
+              12.91
+            ],
+            [
+              80.22,
+              12.91
+            ],
+            [
+              80.22,
+              12.89
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

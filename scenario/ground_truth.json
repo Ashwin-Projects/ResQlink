@@ -1,0 +1,121 @@
+{
+  "objective": "Minimize weighted unmet demand + travel distance (ILP with PuLP/CBC)",
+  "solver": "PuLP CBC (Integer Linear Programming)",
+  "urgency_weights": {
+    "critical": 1000,
+    "high": 500,
+    "medium": 100,
+    "low": 10
+  },
+  "distance_weight_km": 1.0,
+  "constraints": [
+    "Resource qty <= available",
+    "Total allocated per request <= requested",
+    "Integer allocations"
+  ],
+  "allocations": [
+    {
+      "request_id": "d2bbcd18-59de-48a5-8bbf-f83f59f714d7",
+      "status": "unfulfilled",
+      "allocated_qty": 0,
+      "resources_used": []
+    },
+    {
+      "request_id": "ec250539-b3f6-4ada-b1e8-3f592ac67803",
+      "status": "unfulfilled",
+      "allocated_qty": 0,
+      "resources_used": []
+    },
+    {
+      "request_id": "63e9dbbc-28ef-4708-8dfd-1ff2c058c5ed",
+      "status": "unfulfilled",
+      "allocated_qty": 0,
+      "resources_used": []
+    },
+    {
+      "request_id": "ce3e4b73-d920-45b1-b83c-034bd2ea082b",
+      "status": "unfulfilled",
+      "allocated_qty": 0,
+      "resources_used": []
+    },
+    {
+      "request_id": "3951c8f3-8072-4911-98f6-313677c45fad",
+      "status": "unfulfilled",
+      "allocated_qty": 0,
+      "resources_used": []
+    },
+    {
+      "request_id": "1cc548e2-d71d-47cd-8299-efb8cd5ab0f4",
+      "status": "unfulfilled",
+      "allocated_qty": 0,
+      "resources_used": []
+    },
+    {
+      "request_id": "ea47d077-33e8-4b3a-bffd-8876fe024fcc",
+      "status": "partially_fulfilled",
+      "allocated_qty": 4,
+      "resources_used": [
+        {
+          "resource_id": "43bbeda5-e5cd-4810-b0cb-faae9f7adb1d",
+          "qty": 1
+        },
+        {
+          "resource_id": "984c7fc7-9cb8-48a5-80e5-a0069b5d66cb",
+          "qty": 1
+        },
+        {
+          "resource_id": "4c0b6d34-f208-4dc0-bfc4-5135bc752558",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "request_id": "e8944ace-d8de-40c5-aaa4-107192777d9e",
+      "status": "unfulfilled",
+      "allocated_qty": 0,
+      "resources_used": []
+    },
+    {
+      "request_id": "5f1d6fc5-be99-4893-90c2-eed750fb5c1d",
+      "status": "unfulfilled",
+      "allocated_qty": 0,
+      "resources_used": []
+    },
+    {
+      "request_id": "1b3f1c26-bd74-400b-8b69-1516c302a6b8",
+      "status": "unfulfilled",
+      "allocated_qty": 0,
+      "resources_used": []
+    },
+    {
+      "request_id": "e8c83604-762a-4a10-97db-75a526cc1b36",
+      "status": "unfulfilled",
+      "allocated_qty": 0,
+      "resources_used": []
+    },
+    {
+      "request_id": "370e4107-528c-4c47-9b8d-f9cd8b27f7ee",
+      "status": "unfulfilled",
+      "allocated_qty": 0,
+      "resources_used": []
+    },
+    {
+      "request_id": "bf61aad1-62cb-4822-b1ef-ee1fb76743ba",
+      "status": "unfulfilled",
+      "allocated_qty": 0,
+      "resources_used": []
+    },
+    {
+      "request_id": "c68177e6-969c-433c-ad1f-39127557b177",
+      "status": "unfulfilled",
+      "allocated_qty": 0,
+      "resources_used": []
+    },
+    {
+      "request_id": "b0ac856c-0feb-4051-9834-aca50b770223",
+      "status": "unfulfilled",
+      "allocated_qty": 0,
+      "resources_used": []
+    }
+  ]
+}

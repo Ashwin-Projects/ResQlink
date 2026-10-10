@@ -1,0 +1,1096 @@
+{
+  "seed": 123,
+  "metrics": {
+    "distance_only": {
+      "coverage_percent": 62.35294117647059,
+      "full_coverage_percent": 22.35294117647059,
+      "latency_ms": {
+        "p50": 5.0,
+        "p95": 5.0,
+        "p99": 5.0,
+        "mean": 5.0,
+        "std": 0.0
+      },
+      "db_work": {
+        "total_rows_scanned": 212,
+        "total_candidate_pairs": 212,
+        "mean_rows_per_request": 2.4941176470588236,
+        "mean_pairs_per_request": 2.4941176470588236
+      },
+      "double_allocations": 0,
+      "weighted_unmet_demand": {
+        "weighted_unmet_demand": 251970.0,
+        "weighted_demand_total": 482390.0,
+        "weighted_unmet_ratio": 52.23366985219429,
+        "total_unmet_units": 802.0,
+        "unmet_by_urgency": {
+          "critical": 70.0,
+          "high": 314.0,
+          "medium": 231.0,
+          "low": 187.0
+        }
+      },
+      "ground_truth_accuracy": {
+        "available": true,
+        "total_compared": 15,
+        "exact_match_rate": 80.0,
+        "acceptable_match_rate": 80.0,
+        "optimality_gap_weighted": 0.0,
+        "unmet_demand_difference": 0.0,
+        "exact_matches": 12,
+        "acceptable_matches": 12
+      },
+      "stale_resource_behavior": {
+        "stale_match_count": 25,
+        "total_matches": 53,
+        "stale_match_rate": 47.16981132075472
+      },
+      "reallocations": 0,
+      "accessibility": {
+        "mean_distance_km": 4.820413304933143,
+        "median_distance_km": 3.040224572722444,
+        "max_distance_km": 15.547116976902808,
+        "min_distance_km": 0.26680309818127557
+      },
+      "fairness": {
+        "fulfillment_by_urgency": {
+          "critical": {
+            "rate": 100.0,
+            "full_rate": 14.285714285714285,
+            "total": 14
+          },
+          "high": {
+            "rate": 64.51612903225806,
+            "full_rate": 22.58064516129032,
+            "total": 31
+          },
+          "medium": {
+            "rate": 56.52173913043478,
+            "full_rate": 26.08695652173913,
+            "total": 23
+          },
+          "low": {
+            "rate": 35.294117647058826,
+            "full_rate": 23.52941176470588,
+            "total": 17
+          }
+        },
+        "low_urgency_starvation_rate": 64.70588235294117,
+        "wait_time_ms_by_urgency": {
+          "critical": 0,
+          "high": 5.0,
+          "medium": 5.0,
+          "low": 5.0
+        }
+      }
+    },
+    "urgency_distance": {
+      "coverage_percent": 62.35294117647059,
+      "full_coverage_percent": 22.35294117647059,
+      "latency_ms": {
+        "p50": 5.0,
+        "p95": 5.0,
+        "p99": 5.15987396240234,
+        "mean": 5.011755438411937,
+        "std": 0.1077403727001859
+      },
+      "db_work": {
+        "total_rows_scanned": 212,
+        "total_candidate_pairs": 212,
+        "mean_rows_per_request": 2.4941176470588236,
+        "mean_pairs_per_request": 2.4941176470588236
+      },
+      "double_allocations": 0,
+      "weighted_unmet_demand": {
+        "weighted_unmet_demand": 251970.0,
+        "weighted_demand_total": 482390.0,
+        "weighted_unmet_ratio": 52.23366985219429,
+        "total_unmet_units": 802.0,
+        "unmet_by_urgency": {
+          "critical": 70.0,
+          "high": 314.0,
+          "medium": 231.0,
+          "low": 187.0
+        }
+      },
+      "ground_truth_accuracy": {
+        "available": true,
+        "total_compared": 15,
+        "exact_match_rate": 80.0,
+        "acceptable_match_rate": 80.0,
+        "optimality_gap_weighted": 0.0,
+        "unmet_demand_difference": 0.0,
+        "exact_matches": 12,
+        "acceptable_matches": 12
+      },
+      "stale_resource_behavior": {
+        "stale_match_count": 25,
+        "total_matches": 53,
+        "stale_match_rate": 47.16981132075472
+      },
+      "reallocations": 0,
+      "accessibility": {
+        "mean_distance_km": 4.820413304933143,
+        "median_distance_km": 3.040224572722444,
+        "max_distance_km": 15.547116976902808,
+        "min_distance_km": 0.26680309818127557
+      },
+      "fairness": {
+        "fulfillment_by_urgency": {
+          "critical": {
+            "rate": 100.0,
+            "full_rate": 14.285714285714285,
+            "total": 14
+          },
+          "high": {
+            "rate": 64.51612903225806,
+            "full_rate": 22.58064516129032,
+            "total": 31
+          },
+          "medium": {
+            "rate": 56.52173913043478,
+            "full_rate": 26.08695652173913,
+            "total": 23
+          },
+          "low": {
+            "rate": 35.294117647058826,
+            "full_rate": 23.52941176470588,
+            "total": 17
+          }
+        },
+        "low_urgency_starvation_rate": 64.70588235294117,
+        "wait_time_ms_by_urgency": {
+          "critical": 0,
+          "high": 5.0,
+          "medium": 5.0,
+          "low": 5.0
+        }
+      }
+    },
+    "urgency_distance_quantity": {
+      "coverage_percent": 57.647058823529406,
+      "full_coverage_percent": 18.823529411764707,
+      "latency_ms": {
+        "p50": 5.0,
+        "p95": 5.0,
+        "p99": 5.161514282226559,
+        "mean": 5.011876050163718,
+        "std": 0.10884579766465928
+      },
+      "db_work": {
+        "total_rows_scanned": 218,
+        "total_candidate_pairs": 218,
+        "mean_rows_per_request": 2.5647058823529414,
+        "mean_pairs_per_request": 2.5647058823529414
+      },
+      "double_allocations": 0,
+      "weighted_unmet_demand": {
+        "weighted_unmet_demand": 202470.0,
+        "weighted_demand_total": 482390.0,
+        "weighted_unmet_ratio": 41.97226310661498,
+        "total_unmet_units": 783.0,
+        "unmet_by_urgency": {
+          "critical": 33.0,
+          "high": 294.0,
+          "medium": 199.0,
+          "low": 257.0
+        }
+      },
+      "ground_truth_accuracy": {
+        "available": true,
+        "total_compared": 15,
+        "exact_match_rate": 80.0,
+        "acceptable_match_rate": 80.0,
+        "optimality_gap_weighted": 0.0,
+        "unmet_demand_difference": 0.0,
+        "exact_matches": 12,
+        "acceptable_matches": 12
+      },
+      "stale_resource_behavior": {
+        "stale_match_count": 26,
+        "total_matches": 49,
+        "stale_match_rate": 53.06122448979592
+      },
+      "reallocations": 0,
+      "accessibility": {
+        "mean_distance_km": 7.530819563725857,
+        "median_distance_km": 7.951383737207638,
+        "max_distance_km": 15.691761272100786,
+        "min_distance_km": 0.20640738203493494
+      },
+      "fairness": {
+        "fulfillment_by_urgency": {
+          "critical": {
+            "rate": 100.0,
+            "full_rate": 35.714285714285715,
+            "total": 14
+          },
+          "high": {
+            "rate": 64.51612903225806,
+            "full_rate": 19.35483870967742,
+            "total": 31
+          },
+          "medium": {
+            "rate": 56.52173913043478,
+            "full_rate": 17.391304347826086,
+            "total": 23
+          },
+          "low": {
+            "rate": 11.76470588235294,
+            "full_rate": 5.88235294117647,
+            "total": 17
+          }
+        },
+        "low_urgency_starvation_rate": 88.23529411764706,
+        "wait_time_ms_by_urgency": {
+          "critical": 0,
+          "high": 5.0,
+          "medium": 5.0,
+          "low": 5.0
+        }
+      }
+    },
+    "first_available": {
+      "coverage_percent": 62.35294117647059,
+      "full_coverage_percent": 22.35294117647059,
+      "latency_ms": {
+        "p50": 5.0,
+        "p95": 5.0,
+        "p99": 5.0,
+        "mean": 5.0,
+        "std": 0.0
+      },
+      "db_work": {
+        "total_rows_scanned": 212,
+        "total_candidate_pairs": 212,
+        "mean_rows_per_request": 2.4941176470588236,
+        "mean_pairs_per_request": 2.4941176470588236
+      },
+      "double_allocations": 0,
+      "weighted_unmet_demand": {
+        "weighted_unmet_demand": 251970.0,
+        "weighted_demand_total": 482390.0,
+        "weighted_unmet_ratio": 52.23366985219429,
+        "total_unmet_units": 802.0,
+        "unmet_by_urgency": {
+          "critical": 70.0,
+          "high": 314.0,
+          "medium": 231.0,
+          "low": 187.0
+        }
+      },
+      "ground_truth_accuracy": {
+        "available": true,
+        "total_compared": 15,
+        "exact_match_rate": 80.0,
+        "acceptable_match_rate": 80.0,
+        "optimality_gap_weighted": 0.0,
+        "unmet_demand_difference": 0.0,
+        "exact_matches": 12,
+        "acceptable_matches": 12
+      },
+      "stale_resource_behavior": {
+        "stale_match_count": 25,
+        "total_matches": 53,
+        "stale_match_rate": 47.16981132075472
+      },
+      "reallocations": 0,
+      "accessibility": {
+        "mean_distance_km": 4.820413304933143,
+        "median_distance_km": 3.040224572722444,
+        "max_distance_km": 15.547116976902808,
+        "min_distance_km": 0.26680309818127557
+      },
+      "fairness": {
+        "fulfillment_by_urgency": {
+          "critical": {
+            "rate": 100.0,
+            "full_rate": 14.285714285714285,
+            "total": 14
+          },
+          "high": {
+            "rate": 64.51612903225806,
+            "full_rate": 22.58064516129032,
+            "total": 31
+          },
+          "medium": {
+            "rate": 56.52173913043478,
+            "full_rate": 26.08695652173913,
+            "total": 23
+          },
+          "low": {
+            "rate": 35.294117647058826,
+            "full_rate": 23.52941176470588,
+            "total": 17
+          }
+        },
+        "low_urgency_starvation_rate": 64.70588235294117,
+        "wait_time_ms_by_urgency": {
+          "critical": 0,
+          "high": 5.0,
+          "medium": 5.0,
+          "low": 5.0
+        }
+      }
+    },
+    "full_rescan": {
+      "coverage_percent": 56.470588235294116,
+      "full_coverage_percent": 16.470588235294116,
+      "latency_ms": {
+        "p50": 5.0,
+        "p95": 5.0,
+        "p99": 5.156784057617184,
+        "mean": 5.0115282395306755,
+        "std": 0.10565806055780583
+      },
+      "db_work": {
+        "total_rows_scanned": 212,
+        "total_candidate_pairs": 212,
+        "mean_rows_per_request": 2.4941176470588236,
+        "mean_pairs_per_request": 2.4941176470588236
+      },
+      "double_allocations": 0,
+      "weighted_unmet_demand": {
+        "weighted_unmet_demand": 202970.0,
+        "weighted_demand_total": 482390.0,
+        "weighted_unmet_ratio": 42.07591367980265,
+        "total_unmet_units": 783.0,
+        "unmet_by_urgency": {
+          "critical": 34.0,
+          "high": 293.0,
+          "medium": 199.0,
+          "low": 257.0
+        }
+      },
+      "ground_truth_accuracy": {
+        "available": true,
+        "total_compared": 15,
+        "exact_match_rate": 80.0,
+        "acceptable_match_rate": 80.0,
+        "optimality_gap_weighted": 0.0,
+        "unmet_demand_difference": 0.0,
+        "exact_matches": 12,
+        "acceptable_matches": 12
+      },
+      "stale_resource_behavior": {
+        "stale_match_count": 25,
+        "total_matches": 48,
+        "stale_match_rate": 52.083333333333336
+      },
+      "reallocations": 0,
+      "accessibility": {
+        "mean_distance_km": 8.031523064133,
+        "median_distance_km": 8.720956520053129,
+        "max_distance_km": 15.691761272100786,
+        "min_distance_km": 0.20640738203493494
+      },
+      "fairness": {
+        "fulfillment_by_urgency": {
+          "critical": {
+            "rate": 100.0,
+            "full_rate": 35.714285714285715,
+            "total": 14
+          },
+          "high": {
+            "rate": 64.51612903225806,
+            "full_rate": 19.35483870967742,
+            "total": 31
+          },
+          "medium": {
+            "rate": 56.52173913043478,
+            "full_rate": 13.043478260869565,
+            "total": 23
+          },
+          "low": {
+            "rate": 5.88235294117647,
+            "full_rate": 0.0,
+            "total": 17
+          }
+        },
+        "low_urgency_starvation_rate": 94.11764705882354,
+        "wait_time_ms_by_urgency": {
+          "critical": 0,
+          "high": 5.0,
+          "medium": 5.0,
+          "low": 5.0
+        }
+      }
+    },
+    "A_distance_only": {
+      "coverage_percent": 61.1764705882353,
+      "full_coverage_percent": 17.647058823529413,
+      "latency_ms": {
+        "p50": 1.0,
+        "p95": 1.0,
+        "p99": 1.159492492675778,
+        "mean": 1.0117273891673368,
+        "std": 0.10748329712705257
+      },
+      "db_work": {
+        "total_rows_scanned": 52,
+        "total_candidate_pairs": 52,
+        "mean_rows_per_request": 0.611764705882353,
+        "mean_pairs_per_request": 0.611764705882353
+      },
+      "double_allocations": 0,
+      "weighted_unmet_demand": {
+        "weighted_unmet_demand": 248440.0,
+        "weighted_demand_total": 482390.0,
+        "weighted_unmet_ratio": 51.50189680548933,
+        "total_unmet_units": 783.0,
+        "unmet_by_urgency": {
+          "critical": 81.0,
+          "high": 298.0,
+          "medium": 160.0,
+          "low": 244.0
+        }
+      },
+      "ground_truth_accuracy": {
+        "available": true,
+        "total_compared": 15,
+        "exact_match_rate": 80.0,
+        "acceptable_match_rate": 80.0,
+        "optimality_gap_weighted": 0.0,
+        "unmet_demand_difference": 0.0,
+        "exact_matches": 12,
+        "acceptable_matches": 12
+      },
+      "stale_resource_behavior": {
+        "stale_match_count": 25,
+        "total_matches": 52,
+        "stale_match_rate": 48.07692307692308
+      },
+      "reallocations": 0,
+      "accessibility": {
+        "mean_distance_km": 8.31684354772939,
+        "median_distance_km": 8.795216906903157,
+        "max_distance_km": 18.588808984074017,
+        "min_distance_km": 1.1530600892470326
+      },
+      "fairness": {
+        "fulfillment_by_urgency": {
+          "critical": {
+            "rate": 100.0,
+            "full_rate": 14.285714285714285,
+            "total": 14
+          },
+          "high": {
+            "rate": 64.51612903225806,
+            "full_rate": 16.129032258064516,
+            "total": 31
+          },
+          "medium": {
+            "rate": 65.21739130434783,
+            "full_rate": 26.08695652173913,
+            "total": 23
+          },
+          "low": {
+            "rate": 17.647058823529413,
+            "full_rate": 11.76470588235294,
+            "total": 17
+          }
+        },
+        "low_urgency_starvation_rate": 82.35294117647058,
+        "wait_time_ms_by_urgency": {
+          "critical": 0,
+          "high": 1.0,
+          "medium": 1.0,
+          "low": 1.0
+        }
+      }
+    },
+    "B_distance_urgency": {
+      "coverage_percent": 61.1764705882353,
+      "full_coverage_percent": 17.647058823529413,
+      "latency_ms": {
+        "p50": 1.0,
+        "p95": 1.0,
+        "p99": 1.0,
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "db_work": {
+        "total_rows_scanned": 52,
+        "total_candidate_pairs": 52,
+        "mean_rows_per_request": 0.611764705882353,
+        "mean_pairs_per_request": 0.611764705882353
+      },
+      "double_allocations": 0,
+      "weighted_unmet_demand": {
+        "weighted_unmet_demand": 248440.0,
+        "weighted_demand_total": 482390.0,
+        "weighted_unmet_ratio": 51.50189680548933,
+        "total_unmet_units": 783.0,
+        "unmet_by_urgency": {
+          "critical": 81.0,
+          "high": 298.0,
+          "medium": 160.0,
+          "low": 244.0
+        }
+      },
+      "ground_truth_accuracy": {
+        "available": true,
+        "total_compared": 15,
+        "exact_match_rate": 80.0,
+        "acceptable_match_rate": 80.0,
+        "optimality_gap_weighted": 0.0,
+        "unmet_demand_difference": 0.0,
+        "exact_matches": 12,
+        "acceptable_matches": 12
+      },
+      "stale_resource_behavior": {
+        "stale_match_count": 25,
+        "total_matches": 52,
+        "stale_match_rate": 48.07692307692308
+      },
+      "reallocations": 0,
+      "accessibility": {
+        "mean_distance_km": 8.31684354772939,
+        "median_distance_km": 8.795216906903157,
+        "max_distance_km": 18.588808984074017,
+        "min_distance_km": 1.1530600892470326
+      },
+      "fairness": {
+        "fulfillment_by_urgency": {
+          "critical": {
+            "rate": 100.0,
+            "full_rate": 14.285714285714285,
+            "total": 14
+          },
+          "high": {
+            "rate": 64.51612903225806,
+            "full_rate": 16.129032258064516,
+            "total": 31
+          },
+          "medium": {
+            "rate": 65.21739130434783,
+            "full_rate": 26.08695652173913,
+            "total": 23
+          },
+          "low": {
+            "rate": 17.647058823529413,
+            "full_rate": 11.76470588235294,
+            "total": 17
+          }
+        },
+        "low_urgency_starvation_rate": 82.35294117647058,
+        "wait_time_ms_by_urgency": {
+          "critical": 0,
+          "high": 1.0,
+          "medium": 1.0,
+          "low": 1.0
+        }
+      }
+    },
+    "C_distance_quantity": {
+      "coverage_percent": 61.1764705882353,
+      "full_coverage_percent": 17.647058823529413,
+      "latency_ms": {
+        "p50": 1.0,
+        "p95": 1.0,
+        "p99": 1.0,
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "db_work": {
+        "total_rows_scanned": 52,
+        "total_candidate_pairs": 52,
+        "mean_rows_per_request": 0.611764705882353,
+        "mean_pairs_per_request": 0.611764705882353
+      },
+      "double_allocations": 0,
+      "weighted_unmet_demand": {
+        "weighted_unmet_demand": 248440.0,
+        "weighted_demand_total": 482390.0,
+        "weighted_unmet_ratio": 51.50189680548933,
+        "total_unmet_units": 783.0,
+        "unmet_by_urgency": {
+          "critical": 81.0,
+          "high": 298.0,
+          "medium": 160.0,
+          "low": 244.0
+        }
+      },
+      "ground_truth_accuracy": {
+        "available": true,
+        "total_compared": 15,
+        "exact_match_rate": 80.0,
+        "acceptable_match_rate": 80.0,
+        "optimality_gap_weighted": 0.0,
+        "unmet_demand_difference": 0.0,
+        "exact_matches": 12,
+        "acceptable_matches": 12
+      },
+      "stale_resource_behavior": {
+        "stale_match_count": 25,
+        "total_matches": 52,
+        "stale_match_rate": 48.07692307692308
+      },
+      "reallocations": 0,
+      "accessibility": {
+        "mean_distance_km": 8.31684354772939,
+        "median_distance_km": 8.795216906903157,
+        "max_distance_km": 18.588808984074017,
+        "min_distance_km": 1.1530600892470326
+      },
+      "fairness": {
+        "fulfillment_by_urgency": {
+          "critical": {
+            "rate": 100.0,
+            "full_rate": 14.285714285714285,
+            "total": 14
+          },
+          "high": {
+            "rate": 64.51612903225806,
+            "full_rate": 16.129032258064516,
+            "total": 31
+          },
+          "medium": {
+            "rate": 65.21739130434783,
+            "full_rate": 26.08695652173913,
+            "total": 23
+          },
+          "low": {
+            "rate": 17.647058823529413,
+            "full_rate": 11.76470588235294,
+            "total": 17
+          }
+        },
+        "low_urgency_starvation_rate": 82.35294117647058,
+        "wait_time_ms_by_urgency": {
+          "critical": 0,
+          "high": 1.0,
+          "medium": 1.0,
+          "low": 1.0
+        }
+      }
+    },
+    "D_full_resqlink": {
+      "coverage_percent": 61.1764705882353,
+      "full_coverage_percent": 17.647058823529413,
+      "latency_ms": {
+        "p50": 1.0,
+        "p95": 1.0,
+        "p99": 1.0,
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "db_work": {
+        "total_rows_scanned": 52,
+        "total_candidate_pairs": 52,
+        "mean_rows_per_request": 0.611764705882353,
+        "mean_pairs_per_request": 0.611764705882353
+      },
+      "double_allocations": 0,
+      "weighted_unmet_demand": {
+        "weighted_unmet_demand": 248440.0,
+        "weighted_demand_total": 482390.0,
+        "weighted_unmet_ratio": 51.50189680548933,
+        "total_unmet_units": 783.0,
+        "unmet_by_urgency": {
+          "critical": 81.0,
+          "high": 298.0,
+          "medium": 160.0,
+          "low": 244.0
+        }
+      },
+      "ground_truth_accuracy": {
+        "available": true,
+        "total_compared": 15,
+        "exact_match_rate": 80.0,
+        "acceptable_match_rate": 80.0,
+        "optimality_gap_weighted": 0.0,
+        "unmet_demand_difference": 0.0,
+        "exact_matches": 12,
+        "acceptable_matches": 12
+      },
+      "stale_resource_behavior": {
+        "stale_match_count": 25,
+        "total_matches": 52,
+        "stale_match_rate": 48.07692307692308
+      },
+      "reallocations": 0,
+      "accessibility": {
+        "mean_distance_km": 8.31684354772939,
+        "median_distance_km": 8.795216906903157,
+        "max_distance_km": 18.588808984074017,
+        "min_distance_km": 1.1530600892470326
+      },
+      "fairness": {
+        "fulfillment_by_urgency": {
+          "critical": {
+            "rate": 100.0,
+            "full_rate": 14.285714285714285,
+            "total": 14
+          },
+          "high": {
+            "rate": 64.51612903225806,
+            "full_rate": 16.129032258064516,
+            "total": 31
+          },
+          "medium": {
+            "rate": 65.21739130434783,
+            "full_rate": 26.08695652173913,
+            "total": 23
+          },
+          "low": {
+            "rate": 17.647058823529413,
+            "full_rate": 11.76470588235294,
+            "total": 17
+          }
+        },
+        "low_urgency_starvation_rate": 82.35294117647058,
+        "wait_time_ms_by_urgency": {
+          "critical": 0,
+          "high": 1.0,
+          "medium": 1.0,
+          "low": 1.0
+        }
+      }
+    },
+    "E_no_confidence": {
+      "coverage_percent": 61.1764705882353,
+      "full_coverage_percent": 17.647058823529413,
+      "latency_ms": {
+        "p50": 1.0,
+        "p95": 1.0,
+        "p99": 1.2486419677734322,
+        "mean": 1.0182824976304,
+        "std": 0.16756185856831587
+      },
+      "db_work": {
+        "total_rows_scanned": 52,
+        "total_candidate_pairs": 52,
+        "mean_rows_per_request": 0.611764705882353,
+        "mean_pairs_per_request": 0.611764705882353
+      },
+      "double_allocations": 0,
+      "weighted_unmet_demand": {
+        "weighted_unmet_demand": 248440.0,
+        "weighted_demand_total": 482390.0,
+        "weighted_unmet_ratio": 51.50189680548933,
+        "total_unmet_units": 783.0,
+        "unmet_by_urgency": {
+          "critical": 81.0,
+          "high": 298.0,
+          "medium": 160.0,
+          "low": 244.0
+        }
+      },
+      "ground_truth_accuracy": {
+        "available": true,
+        "total_compared": 15,
+        "exact_match_rate": 80.0,
+        "acceptable_match_rate": 80.0,
+        "optimality_gap_weighted": 0.0,
+        "unmet_demand_difference": 0.0,
+        "exact_matches": 12,
+        "acceptable_matches": 12
+      },
+      "stale_resource_behavior": {
+        "stale_match_count": 25,
+        "total_matches": 52,
+        "stale_match_rate": 48.07692307692308
+      },
+      "reallocations": 0,
+      "accessibility": {
+        "mean_distance_km": 8.31684354772939,
+        "median_distance_km": 8.795216906903157,
+        "max_distance_km": 18.588808984074017,
+        "min_distance_km": 1.1530600892470326
+      },
+      "fairness": {
+        "fulfillment_by_urgency": {
+          "critical": {
+            "rate": 100.0,
+            "full_rate": 14.285714285714285,
+            "total": 14
+          },
+          "high": {
+            "rate": 64.51612903225806,
+            "full_rate": 16.129032258064516,
+            "total": 31
+          },
+          "medium": {
+            "rate": 65.21739130434783,
+            "full_rate": 26.08695652173913,
+            "total": 23
+          },
+          "low": {
+            "rate": 17.647058823529413,
+            "full_rate": 11.76470588235294,
+            "total": 17
+          }
+        },
+        "low_urgency_starvation_rate": 82.35294117647058,
+        "wait_time_ms_by_urgency": {
+          "critical": 0,
+          "high": 1.0,
+          "medium": 1.194251537322998,
+          "low": 1.0
+        }
+      }
+    },
+    "F_no_pool_pressure": {
+      "coverage_percent": 61.1764705882353,
+      "full_coverage_percent": 17.647058823529413,
+      "latency_ms": {
+        "p50": 1.0,
+        "p95": 1.0,
+        "p99": 1.0,
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "db_work": {
+        "total_rows_scanned": 52,
+        "total_candidate_pairs": 52,
+        "mean_rows_per_request": 0.611764705882353,
+        "mean_pairs_per_request": 0.611764705882353
+      },
+      "double_allocations": 0,
+      "weighted_unmet_demand": {
+        "weighted_unmet_demand": 248440.0,
+        "weighted_demand_total": 482390.0,
+        "weighted_unmet_ratio": 51.50189680548933,
+        "total_unmet_units": 783.0,
+        "unmet_by_urgency": {
+          "critical": 81.0,
+          "high": 298.0,
+          "medium": 160.0,
+          "low": 244.0
+        }
+      },
+      "ground_truth_accuracy": {
+        "available": true,
+        "total_compared": 15,
+        "exact_match_rate": 80.0,
+        "acceptable_match_rate": 80.0,
+        "optimality_gap_weighted": 0.0,
+        "unmet_demand_difference": 0.0,
+        "exact_matches": 12,
+        "acceptable_matches": 12
+      },
+      "stale_resource_behavior": {
+        "stale_match_count": 25,
+        "total_matches": 52,
+        "stale_match_rate": 48.07692307692308
+      },
+      "reallocations": 0,
+      "accessibility": {
+        "mean_distance_km": 8.31684354772939,
+        "median_distance_km": 8.795216906903157,
+        "max_distance_km": 18.588808984074017,
+        "min_distance_km": 1.1530600892470326
+      },
+      "fairness": {
+        "fulfillment_by_urgency": {
+          "critical": {
+            "rate": 100.0,
+            "full_rate": 14.285714285714285,
+            "total": 14
+          },
+          "high": {
+            "rate": 64.51612903225806,
+            "full_rate": 16.129032258064516,
+            "total": 31
+          },
+          "medium": {
+            "rate": 65.21739130434783,
+            "full_rate": 26.08695652173913,
+            "total": 23
+          },
+          "low": {
+            "rate": 17.647058823529413,
+            "full_rate": 11.76470588235294,
+            "total": 17
+          }
+        },
+        "low_urgency_starvation_rate": 82.35294117647058,
+        "wait_time_ms_by_urgency": {
+          "critical": 0,
+          "high": 1.0,
+          "medium": 1.0,
+          "low": 1.0
+        }
+      }
+    },
+    "G_no_hazard": {
+      "coverage_percent": 61.1764705882353,
+      "full_coverage_percent": 17.647058823529413,
+      "latency_ms": {
+        "p50": 1.0,
+        "p95": 1.0,
+        "p99": 1.0,
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "db_work": {
+        "total_rows_scanned": 52,
+        "total_candidate_pairs": 52,
+        "mean_rows_per_request": 0.611764705882353,
+        "mean_pairs_per_request": 0.611764705882353
+      },
+      "double_allocations": 0,
+      "weighted_unmet_demand": {
+        "weighted_unmet_demand": 248440.0,
+        "weighted_demand_total": 482390.0,
+        "weighted_unmet_ratio": 51.50189680548933,
+        "total_unmet_units": 783.0,
+        "unmet_by_urgency": {
+          "critical": 81.0,
+          "high": 298.0,
+          "medium": 160.0,
+          "low": 244.0
+        }
+      },
+      "ground_truth_accuracy": {
+        "available": true,
+        "total_compared": 15,
+        "exact_match_rate": 80.0,
+        "acceptable_match_rate": 80.0,
+        "optimality_gap_weighted": 0.0,
+        "unmet_demand_difference": 0.0,
+        "exact_matches": 12,
+        "acceptable_matches": 12
+      },
+      "stale_resource_behavior": {
+        "stale_match_count": 25,
+        "total_matches": 52,
+        "stale_match_rate": 48.07692307692308
+      },
+      "reallocations": 0,
+      "accessibility": {
+        "mean_distance_km": 8.31684354772939,
+        "median_distance_km": 8.795216906903157,
+        "max_distance_km": 18.588808984074017,
+        "min_distance_km": 1.1530600892470326
+      },
+      "fairness": {
+        "fulfillment_by_urgency": {
+          "critical": {
+            "rate": 100.0,
+            "full_rate": 14.285714285714285,
+            "total": 14
+          },
+          "high": {
+            "rate": 64.51612903225806,
+            "full_rate": 16.129032258064516,
+            "total": 31
+          },
+          "medium": {
+            "rate": 65.21739130434783,
+            "full_rate": 26.08695652173913,
+            "total": 23
+          },
+          "low": {
+            "rate": 17.647058823529413,
+            "full_rate": 11.76470588235294,
+            "total": 17
+          }
+        },
+        "low_urgency_starvation_rate": 82.35294117647058,
+        "wait_time_ms_by_urgency": {
+          "critical": 0,
+          "high": 1.0,
+          "medium": 1.0,
+          "low": 1.0
+        }
+      }
+    },
+    "H_full_rescan": {
+      "coverage_percent": 56.470588235294116,
+      "full_coverage_percent": 16.470588235294116,
+      "latency_ms": {
+        "p50": 5.0,
+        "p95": 5.0,
+        "p99": 5.1600646972656214,
+        "mean": 5.011769463034237,
+        "std": 0.10786891048675261
+      },
+      "db_work": {
+        "total_rows_scanned": 212,
+        "total_candidate_pairs": 212,
+        "mean_rows_per_request": 2.4941176470588236,
+        "mean_pairs_per_request": 2.4941176470588236
+      },
+      "double_allocations": 0,
+      "weighted_unmet_demand": {
+        "weighted_unmet_demand": 202970.0,
+        "weighted_demand_total": 482390.0,
+        "weighted_unmet_ratio": 42.07591367980265,
+        "total_unmet_units": 783.0,
+        "unmet_by_urgency": {
+          "critical": 34.0,
+          "high": 293.0,
+          "medium": 199.0,
+          "low": 257.0
+        }
+      },
+      "ground_truth_accuracy": {
+        "available": true,
+        "total_compared": 15,
+        "exact_match_rate": 80.0,
+        "acceptable_match_rate": 80.0,
+        "optimality_gap_weighted": 0.0,
+        "unmet_demand_difference": 0.0,
+        "exact_matches": 12,
+        "acceptable_matches": 12
+      },
+      "stale_resource_behavior": {
+        "stale_match_count": 25,
+        "total_matches": 48,
+        "stale_match_rate": 52.083333333333336
+      },
+      "reallocations": 0,
+      "accessibility": {
+        "mean_distance_km": 8.031523064133,
+        "median_distance_km": 8.720956520053129,
+        "max_distance_km": 15.691761272100786,
+        "min_distance_km": 0.20640738203493494
+      },
+      "fairness": {
+        "fulfillment_by_urgency": {
+          "critical": {
+            "rate": 100.0,
+            "full_rate": 35.714285714285715,
+            "total": 14
+          },
+          "high": {
+            "rate": 64.51612903225806,
+            "full_rate": 19.35483870967742,
+            "total": 31
+          },
+          "medium": {
+            "rate": 56.52173913043478,
+            "full_rate": 13.043478260869565,
+            "total": 23
+          },
+          "low": {
+            "rate": 5.88235294117647,
+            "full_rate": 0.0,
+            "total": 17
+          }
+        },
+        "low_urgency_starvation_rate": 94.11764705882354,
+        "wait_time_ms_by_urgency": {
+          "critical": 0,
+          "high": 5.0,
+          "medium": 5.0,
+          "low": 5.062525272369385
+        }
+      }
+    }
+  },
+  "key_comparison": {
+    "full_rescan_vs_incremental": {
+      "db_work_reduction_percent": 75.47169811320755,
+      "latency_improvement_ms": {
+        "p50": 4.0,
+        "p95": 4.0,
+        "p99": 4.156784057617184
+      },
+      "coverage_difference_percent": 4.705882352941181,
+      "weighted_unmet_demand_difference": 45470.0
+    }
+  }
+}

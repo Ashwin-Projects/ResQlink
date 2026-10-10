@@ -1,0 +1,19 @@
+owner_id,name,owner_type,contact_phone
+7ddb4621-aed7-4174-9c3d-3b99462b3ed8,Provider 1 (Rescue),community,+919876543000
+b24bf41b-95bd-4a5c-9945-4bc8d455cf41,Provider 2 (Rescue),community,+919876543001
+2c26c498-e31f-4fe9-beac-dfe8a687fa41,Provider 3 (Logistics),government,+919876543002
+36a5c8d6-425a-42be-b5a3-0594b9e53a14,Provider 4 (Rescue),community,+919876543003
+731d9aba-1430-4cf7-a14b-a84a56686fea,Provider 5 (Logistics),private,+919876543004
+087d9ec4-f7ed-4e99-8c5f-1586aba659ee,Provider 6 (Rescue),ngo,+919876543005
+b16b28d5-249f-4d7a-8f1a-f405892e23a8,Provider 7 (Logistics),government,+919876543006
+620bea19-6365-44b7-a5d4-64d6c73120e5,Provider 8 (Relief),community,+919876543007
+4f35051d-2c1e-4337-a95a-8b6ee82fbf56,Provider 9 (Relief),private,+919876543008
+15e2d311-819a-423a-bc1b-ab89577786a2,Provider 10 (Logistics),private,+919876543009
+d13a7d59-66b6-4c74-96c0-d1abb14a90cd,Provider 11 (Relief),community,+919876543010
+0b46ad92-f5a1-4149-9c0e-9b6a4749a2ed,Provider 12 (Relief),community,+919876543011
+97fef3ea-cf8d-4d49-aa60-1347ea29bbb0,Provider 13 (Relief),private,+919876543012
+d42404fd-08f0-4e66-a8a1-233d271cbfde,Provider 14 (Logistics),ngo,+919876543013
+9acd40ec-99e9-4f17-9aa0-776e22fb4dbf,Provider 15 (Relief),government,+919876543014
+ce4c91aa-07cb-4c44-b89f-da8e777ef57c,Provider 16 (Rescue),private,+919876543015
+224d3e1b-26e9-4820-9283-e0f460af9c58,Provider 17 (Relief),ngo,+919876543016
+a8741971-3342-4930-92b1-e3c46d661de5,Provider 18 (Relief),community,+919876543017

@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgis/postgis:14-3.2
+    container_name: resqlink-db
+    environment:
+      POSTGRES_DB: resqlink
+      POSTGRES_USER: resqlink
+      POSTGRES_PASSWORD: resqlinkpassword
+      # Password for the unprivileged API login role resqlink_app (migration 0015);
+      # set by scripts/docker/03_app_login_role.sh on first initialisation.
+      APP_DB_PASSWORD: resqlink_app_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./schema.sql:/docker-entrypoint-initdb.d/01_schema.sql
+      - ./scripts/seed_data.sql:/docker-entrypoint-initdb.d/02_seed_data.sql
+      - ./scripts/docker/03_app_login_role.sh:/docker-entrypoint-initdb.d/03_app_login_role.sh
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U resqlink -d resqlink"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: resqlink-backend
+    ports:
+      - "8000:8000"
+    environment:
+      PROJECT_NAME: "ResQLink Emergency Engine"
+      # The API logs in as resqlink_app (not the superuser): every transaction
+      # runs under SET LOCAL ROLE api_<role>, so GRANTs and RLS apply.
+      DATABASE_URL: "postgresql+asyncpg://resqlink_app:resqlink_app_password@db:5432/resqlink"
+      SECRET_KEY: "dev-secret-key-resqlink-production-safe"
+      ALGORITHM: "HS256"
+      ACCESS_TOKEN_EXPIRE_MINUTES: "120"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: resqlink-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      VITE_API_BASE_URL: "http://localhost:8000"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:
