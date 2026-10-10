@@ -14,9 +14,11 @@ from app.api.endpoints_allocations import router as allocations_router
 from app.api.endpoints_requesters import router as requesters_router
 from app.api.deps import get_current_user, require_coordinator
 from app.core.config import settings, DEFAULT_SECRET_KEY
-from app.db.session import database_login_is_privileged
+from app.db.session import database_login_is_privileged, service_session
+from app.workers.supervisor import BackgroundWorkers
 
 logger = logging.getLogger("resqlink.security")
+worker_logger = logging.getLogger("resqlink.workers")
 
 app = FastAPI(title=settings.PROJECT_NAME)
 
@@ -29,6 +31,26 @@ async def _security_startup_checks() -> None:
     if await database_login_is_privileged():
         logger.warning("DATABASE_URL logs in as a superuser / BYPASSRLS role. Every transaction still runs "
                        "under SET LOCAL ROLE api_*, but use the unprivileged resqlink_app login (see README).")
+
+
+@app.on_event("startup")
+async def _start_background_workers() -> None:
+    """Outbox event processor + reservation lease expiry (app/workers/supervisor.py),
+    running as api_service. Disabled with BACKGROUND_WORKERS_ENABLED=false."""
+    if not settings.BACKGROUND_WORKERS_ENABLED:
+        worker_logger.warning("BACKGROUND_WORKERS_ENABLED is false: outbox events are not retried and "
+                              "expired reservation leases are not released.")
+        return
+    app.state.background_workers = BackgroundWorkers(
+        service_session, settings.OUTBOX_POLL_SECONDS, settings.LEASE_EXPIRY_POLL_SECONDS)
+    app.state.background_workers.start()
+
+
+@app.on_event("shutdown")
+async def _stop_background_workers() -> None:
+    workers = getattr(app.state, "background_workers", None)
+    if workers is not None:
+        await workers.stop()
 
 app.add_middleware(
     CORSMiddleware,

@@ -90,7 +90,7 @@ export default function HazardDemoView() {
   };
 
   const rm = result?.rematch;
-  const processed = rm?.status === 'processed';
+  const processed = rm?.status === 'processed' || rm?.status === 'already_processed';
   const revokedN = result?.revoked_leases?.length || 0;
 
   return (
@@ -192,12 +192,13 @@ export default function HazardDemoView() {
                 ))}
               </div>
 
-              <div className={`alert ${processed ? 'alert-success' : rm?.status === 'skipped' ? 'alert-info' : 'alert-error'}`}>
+              <div className={`alert ${processed ? 'alert-success' : rm?.status === 'failed' ? 'alert-error' : 'alert-info'}`}>
                 {processed ? <CheckCircle2 size={16} /> : <Database size={16} />}
                 <div>
                   Outbox event <code>{short(result.event_outbox_id)}</code> — {rm?.status}
                   {rm?.status === 'skipped' && `: ${rm.reason}`}
-                  {rm?.status === 'failed' && `: ${rm.error} (left unprocessed for the worker to retry)`}
+                  {rm?.status === 'failed' && `: ${rm.error}`}
+                  {rm?.status === 'claimed_by_worker' && ': the background worker is processing this event; its outcome will appear under Recent re-match runs'}
                   {rm?.processed_at && <> · processed {fmtTime(rm.processed_at)}</>}
                 </div>
               </div>

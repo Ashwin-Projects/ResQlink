@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import sqlalchemy, asyncpg, fastapi, pytest, pytest_asyncio, geoalchemy2, httpx, pydantic_settings, jwt, shapely; print\\('host deps ok', sqlalchemy.__version__, asyncpg.__version__\\)\")",
+      "Bash(python -m pytest -o asyncio_mode=auto tests/test_rematch_regression.py -v -p no:cacheprovider)",
+      "Bash(python -c ' *)",
+      "Bash(python -m pytest -o asyncio_mode=auto -p no:cacheprovider tests/test_background_workers.py tests/test_rematch_regression.py -v)",
+      "Bash(python -m pytest -o asyncio_mode=auto -p no:cacheprovider tests/test_background_workers.py tests/test_rematch_regression.py tests/test_request_tracking_rules.py \"tests/test_api.py::test_health_check\" \"tests/test_api.py::test_demo_token_endpoint_removed\" \"tests/test_api.py::test_protected_endpoints_require_a_token\" -q)",
+      "Bash(python -W error::RuntimeWarning -m pytest -o asyncio_mode=auto -p no:cacheprovider tests/test_background_workers.py -q)",
+      "Bash(python -m pytest -o asyncio_mode=auto -p no:cacheprovider tests/test_background_workers.py tests/test_rematch_regression.py -q -rw)",
+      "Bash(export MSYS_NO_PATHCONV=1)",
+      "Bash(docker exec *)",
+      "Bash(export DATABASE_URL=\"postgresql+asyncpg://resqlink_app:verify_app_7c1@127.0.0.1:55432/resqlink\" ADMIN_DATABASE_URL=\"postgresql+asyncpg://resqlink:verify_admin_9f3@127.0.0.1:55432/resqlink\")",
+      "Bash(python -m pytest -o asyncio_mode=auto -p no:cacheprovider tests -q -rs)",
+      "Bash(python -m pytest -o asyncio_mode=auto -o asyncio_default_fixture_loop_scope=session -o asyncio_default_test_loop_scope=session -p no:cacheprovider tests -q -rs)",
+      "Bash(python -m pytest -o asyncio_mode=auto -o asyncio_default_fixture_loop_scope=session -o asyncio_default_test_loop_scope=session -p no:cacheprovider tests -q --tb=line)",
+      "Bash(python -c \"import sqlalchemy; print\\(sqlalchemy.__version__\\)\")",
+      "Bash(docker stop *)",
+      "Bash(docker run *)",
+      "Bash(exit 1)",
+      "Bash(python -m pytest -o asyncio_mode=auto -o asyncio_default_fixture_loop_scope=session -o asyncio_default_test_loop_scope=session -p no:cacheprovider -q --tb=line tests/test_api.py tests/test_request_creation.py tests/test_request_tracking_rules.py tests/test_request_tracking_api.py tests/test_resource_management_api.py tests/test_resource_rematch_api.py tests/test_allocation_flow_api.py tests/test_rematch_regression.py tests/test_background_workers.py tests/test_matching.py tests/test_lifecycle.py tests/test_auth_api.py)",
+      "Bash(export DATABASE_URL=\"postgresql+asyncpg://resqlink_app:verify_app_7c1@127.0.0.1:55432/resqlink\" ADMIN_DATABASE_URL=\"postgresql+asyncpg://resqlink:verify_admin_9f3@127.0.0.1:55432/resqlink\" PYTHONPATH=\"C:/db_proj/ResQlink/backend;C:/db_proj/ResQlink/backend/tests\")",
+      "Bash(python \"C:/Users/Ashwin/AppData/Local/Temp/claude/c--db-proj-ResQlink/23057f88-5c78-46a4-ae33-8acdd31d3c19/scratchpad/verify_workers.py\")",
+      "Bash(docker compose *)",
+      "Bash(docker buildx *)",
+      "Bash(docker cp *)",
+      "Bash(curl -s -m 5 -o /dev/null -w '%{http_code}' http://localhost:3000/assets/index-DE6C8998.js)",
+      "Bash(echo \"new bundle served: HTTP $\\(curl -s -m 5 -o /dev/null -w '%{http_code}' http://localhost:3000/assets/index-DE6C8998.js\\)\")",
+      "Bash(python -)",
+      "Bash(docker build *)",
+      "Bash(curl -s -m 5 http://localhost:8000/openapi.json)",
+      "Bash(mkdir -p /c/db_proj/ResQlink_backups)",
+      "Read(//c/db_proj/ResQlink_backups/**)",
+      "Bash(B=\"/c/db_proj/ResQlink_backups\"; docker exec resqlink-db psql -U resqlink -d resqlink -At -F' | ' \\\\ *)"
+    ],
+    "additionalDirectories": [
+      "C:\\db_proj\\ResQlink_backups"
+    ]
+  }
+}

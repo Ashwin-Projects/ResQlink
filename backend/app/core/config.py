@@ -10,6 +10,13 @@ class Settings(BaseSettings):
     SECRET_KEY: str = DEFAULT_SECRET_KEY
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 120
+    # Outbox event processor + reservation lease expiry, run inside the API
+    # process (app/workers/supervisor.py). Off by default: enabling them makes
+    # the worker process every unprocessed event already in event_outbox.
+    # Set BACKGROUND_WORKERS_ENABLED=true to run them.
+    BACKGROUND_WORKERS_ENABLED: bool = False
+    OUTBOX_POLL_SECONDS: float = 5.0
+    LEASE_EXPIRY_POLL_SECONDS: float = 10.0
 
     @field_validator("ALGORITHM")
     @classmethod

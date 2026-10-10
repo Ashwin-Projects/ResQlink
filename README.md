@@ -754,26 +754,7 @@ Login page; the JWT is kept in `sessionStorage` (per tab); every call sends `Aut
 
 ## Local Development
 
-### Prerequisites
-
-- Python 3.x
-- Node.js and npm
-- PostgreSQL with PostGIS for live database execution
-- Docker Desktop for the containerized deployment
-
----
-
-## Frontend
-
-```powershell
-cd frontend
-npm install
-npm run dev
-```
-
-The development server is configured according to the frontend Vite configuration.
-
----
+### Prerequisitesx
 
 ## Backend
 

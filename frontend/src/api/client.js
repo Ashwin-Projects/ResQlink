@@ -80,11 +80,21 @@ async function requestJson(url, options = {}) {
 
 export const api = {
   // Auth: username + password -> signed JWT (no token is ever issued without a password check)
-  login: async (username, password) => {
+  // expectedRole: the role chosen on the sign-in screen. The server refuses a
+  // mismatch (403); the token's role always comes from the account.
+  login: async (username, password, expectedRole) => {
     const { data } = await requestJson('/api/v1/auth/login', {
-      method: 'POST', anonymous: true, body: JSON.stringify({ username, password }),
+      method: 'POST', anonymous: true,
+      body: JSON.stringify({ username, password, ...(expectedRole ? { expected_role: expectedRole } : {}) }),
     });
     return data;   // { access_token, token_type, expires_in, user: { user_id, subject_id, role, display_name } }
+  },
+  // Public sign-up (requester: active; owner: pending coordinator verification).
+  register: async (payload) => {
+    const { data } = await requestJson('/api/v1/auth/register', {
+      method: 'POST', anonymous: true, body: JSON.stringify(payload),
+    });
+    return data;   // { user_id, username, role, status: 'active' | 'pending_approval', message }
   },
   me: async () => {
     const { data } = await requestJson('/api/v1/auth/me');

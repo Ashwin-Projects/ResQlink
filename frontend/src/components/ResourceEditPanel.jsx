@@ -6,17 +6,26 @@ import { Box, Loader2, AlertTriangle, CheckCircle2, X, History, Database, MapPin
 import { Badge, LoadingState } from './ui';
 import { short } from './format';
 
+// Text for a re-match outcome that has no metrics to show.
+function rematchNote(rm) {
+  if (rm.status === 'skipped') return `Skipped: ${rm.reason}`;
+  if (rm.status === 'failed') return `Failed: ${rm.error}`;
+  if (rm.status === 'claimed_by_worker') return 'The background worker is processing this event; its outcome is stored with the outbox event.';
+  return `Status: ${rm.status}`;
+}
+
 // Structured view of the incremental re-match outcome returned by PATCH
 // /api/v1/resources/{id} (also stored in event_outbox.processing_result).
 function RematchResult({ rm, revoked }) {
   if (!rm) return null;
+  const done = rm.status === 'processed' || rm.status === 'already_processed';
   return (
     <div className="subtle-box" data-testid="rematch-result" style={{ marginTop: 12 }}>
       <div className="chip-row" style={{ justifyContent: 'space-between', marginBottom: 10 }}>
         <span className="card-title" style={{ fontSize: 13 }}><GitMerge size={14} className="card-title-icon" /> Incremental re-matching</span>
-        <Badge value={rm.status === 'processed' ? 'processed' : rm.status === 'failed' ? 'failed' : 'skipped'}>{rm.status}</Badge>
+        <Badge value={done ? 'processed' : rm.status === 'failed' ? 'failed' : 'skipped'}>{rm.status}</Badge>
       </div>
-      {rm.status === 'processed' ? (
+      {done ? (
         <>
           <div className="metric-row">
             <div className="metric is-key"><div className="metric-label">Requests re-evaluated</div><div className="metric-value">{rm.requests_evaluated}</div><div className="metric-hint">dependents of affected pools</div></div>
@@ -31,7 +40,7 @@ function RematchResult({ rm, revoked }) {
           </div>
         </>
       ) : (
-        <div className="cell-sub">{rm.status === 'skipped' ? `Skipped: ${rm.reason}` : `Failed: ${rm.error} — the event stays queued for the worker.`}</div>
+        <div className="cell-sub">{rematchNote(rm)}</div>
       )}
     </div>
   );
@@ -126,7 +135,8 @@ export default function ResourceEditPanel({ resourceId, options, onClose, onSave
       const rm = result.rematch;
       const rmText = rm?.status === 'processed'
         ? ` Incremental re-match: ${rm.requests_evaluated} dependent request(s) re-evaluated, ${rm.leases_created} new lease(s), ${rm.leases_revoked} revoked (${rm.elapsed_ms} ms).`
-        : rm?.status === 'failed' ? ` Re-match failed (${rm.error}); the event stays queued for the worker.` : '';
+        : rm?.status === 'failed' ? ` Re-match failed: ${rm.error}`
+        : rm?.status === 'claimed_by_worker' ? ' Re-matching is being processed by the background worker.' : '';
       setMsg({ kind: 'success', text: `Saved: ${Object.keys(result.changes || changes).join(', ')}.${s}${rmText}` });
     } catch (err) {
       setErrors(err.fieldErrors || {});

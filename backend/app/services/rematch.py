@@ -27,9 +27,16 @@ from typing import Callable, Iterable
 
 from sqlalchemy import text
 
+from app.core.config import settings
+
 logger = logging.getLogger(__name__)
 
 RESOURCE_EVENT_TYPES = ("resource_created", "resource_updated", "hazard_area_updated")
+# Stock returned to a pool (lease expired, reservation released, allocation
+# cancelled): re-match the pools of the resource's zone x resource_type from the
+# payload. Processed only by the background worker (EventProcessor).
+RETURN_EVENT_TYPES = ("reservation_expired", "resource_returned", "resource_available")
+REMATCH_EVENT_TYPES = RESOURCE_EVENT_TYPES + RETURN_EVENT_TYPES
 # Resource fields whose change can alter matching results.
 REMATCH_RELEVANT_FIELDS = ("quantity_total", "status", "current_zone_id", "location", "mobility_class")
 OPEN_STATUSES = ("open", "pending", "partially_fulfilled")
@@ -188,8 +195,11 @@ async def run_rematch(session_factory: Callable, event_type: str, payload: dict,
     # 4. After snapshot + decisions recorded during this run.
     async with session_factory() as s:
         after = await _snapshot(s, affected_ids)
+        # started_db is the timezone-aware datetime PostgreSQL returned for now();
+        # pass it as-is: asyncpg encodes timestamptz parameters only from
+        # date/datetime objects and rejects an ISO string.
         decisions = (await s.execute(NEW_DECISIONS_SQL, {"request_ids": affected_ids or [str(uuid.uuid4())],
-                                                         "since": started_db.isoformat()})).mappings().all()
+                                                         "since": started_db})).mappings().all()
         await s.commit()
 
     revoked_by_request: dict = {}
@@ -261,15 +271,24 @@ async def process_event_now(session_factory: Callable, event_id, engine_factory:
             if state["processed_at"] is not None:
                 return {**(_json(state["processing_result"]) or {}), "status": "already_processed", "event_id": str(event_id)}
             return {"status": "claimed_by_worker", "event_id": str(event_id)}
-        if ev["event_type"] not in RESOURCE_EVENT_TYPES:
+        if ev["event_type"] not in REMATCH_EVENT_TYPES:
             await claim.rollback()
             return {"status": "not_a_rematch_event", "event_id": str(event_id), "event_type": ev["event_type"]}
+        # Return events carry the requesting pool in pool_id; the freed stock is
+        # located by the payload's zone_id x resource_type instead.
+        pool_id = ev["pool_id"] if ev["event_type"] in RESOURCE_EVENT_TYPES else None
         try:
-            result = await run_rematch(session_factory, ev["event_type"], _json(ev["payload"]), ev["pool_id"], engine_factory)
-        except Exception as e:  # leave the event unprocessed so the worker retries it
+            result = await run_rematch(session_factory, ev["event_type"], _json(ev["payload"]), pool_id, engine_factory)
+        except Exception as e:  # leave the event unprocessed so it can be retried
+            # Full exception (SQL, parameters, traceback) goes to the server log
+            # only; the API response carries a safe summary, never raw SQL.
             logger.exception("Incremental re-match failed for event %s", event_id)
             await claim.rollback()
-            return {"status": "failed", "event_id": str(event_id), "error": str(e)}
+            retry = ("the background worker will retry it" if settings.BACKGROUND_WORKERS_ENABLED
+                     else "background workers are disabled, so it will not be retried automatically")
+            return {"status": "failed", "event_id": str(event_id), "error_type": type(e).__name__,
+                    "error": f"Incremental re-matching could not be completed; outbox event {event_id} was left "
+                             f"unprocessed and {retry}. Details are in the server log."}
         result["event_id"] = str(event_id)
         await claim.execute(FINISH_EVENT_SQL, {"event_id": event_id, "result": json.dumps(result, default=str)})
         processed_at = (await claim.execute(EVENT_STATE_SQL, {"event_id": event_id})).mappings().one()["processed_at"]

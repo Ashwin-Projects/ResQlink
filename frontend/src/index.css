@@ -724,7 +724,7 @@ textarea.form-input { height: auto; min-height: 76px; padding: 9px 11px; resize:
    Login
    ============================================================================ */
 .login-shell { min-height: 100vh; display: grid; place-items: center; padding: 32px 16px; }
-.login-card { width: 100%; max-width: 420px; padding: 28px 28px 24px; }
+.login-card { width: 100%; max-width: 480px; padding: 28px 28px 24px; }
 .login-card .brand { padding: 0 0 22px; }
 .login-heading { font-size: 18px; font-weight: 650; margin-bottom: 4px; }
 .login-lead { font-size: 13px; color: var(--text-2); margin-bottom: 18px; }
@@ -734,6 +734,34 @@ textarea.form-input { height: auto; min-height: 76px; padding: 9px 11px; resize:
 .login-demo li { display: grid; grid-template-columns: 112px auto minmax(0, 1fr); align-items: center; gap: 8px; }
 .login-demo-who { color: var(--text-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .login-foot { margin-top: 16px; font-size: 11.5px; color: var(--text-3); text-align: center; }
+.auth-mode { display: grid; grid-template-columns: 1fr 1fr; width: 100%; margin-bottom: 18px; }
+.auth-mode button { justify-content: center; }
+.role-options { border: 0; padding: 0; margin: 0 0 16px; min-width: 0; display: grid; gap: 8px; }
+.role-options legend { padding: 0; margin-bottom: 8px; }
+.role-option { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; cursor: pointer;
+  background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--r-md); }
+.role-option:hover { border-color: var(--border-strong); }
+.role-option.is-selected { border-color: var(--blue); background: var(--blue-soft); }
+.role-option:focus-within { box-shadow: 0 0 0 3px var(--blue-soft); border-color: var(--blue); }
+.role-options:disabled .role-option { cursor: default; opacity: 0.7; }
+.role-option-icon { flex: none; margin-top: 1px; color: var(--text-2); }
+.role-option.is-selected .role-option-icon { color: var(--blue); }
+.role-option-text { display: grid; gap: 2px; min-width: 0; }
+.role-option-label { font-size: 13px; font-weight: 600; color: var(--text); }
+.role-option-desc { font-size: 12px; color: var(--text-2); line-height: 1.4; }
+.password-field { position: relative; }
+.password-field .form-input { padding-right: 40px; }
+.password-toggle { position: absolute; top: 50%; right: 6px; transform: translateY(-50%); display: grid; place-items: center;
+  width: 30px; height: 30px; border: 0; border-radius: var(--r-sm); background: none; color: var(--text-3); cursor: pointer; }
+.password-toggle:hover { color: var(--text); background: var(--surface-2); }
+.password-toggle:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--blue); color: var(--text); }
+.form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 12px; }
+@media (max-width: 480px) {
+  .login-card { padding: 22px 18px 20px; }
+  .form-row-2 { grid-template-columns: 1fr; }
+  .login-demo li { grid-template-columns: auto auto; }
+  .login-demo-who { grid-column: 1 / -1; white-space: normal; }
+}
 
 /* ============================================================================
    Misc

@@ -464,6 +464,53 @@ class LoginRequest(BaseModel):
     model_config = ConfigDict(extra='forbid', str_strip_whitespace=True)
     username: str = Field(..., min_length=3, max_length=64)
     password: str = Field(..., min_length=1, max_length=256)
+    # The role the user chose on the sign-in screen. It never grants anything:
+    # the token's role always comes from the account; a mismatch is refused.
+    expected_role: Optional[AppRoleLiteral] = None
+
+
+class RegisterRequest(BaseModel):
+    """Public sign-up. `role` 'coordinator' is accepted only so the API can
+    answer with a clear 403; coordinator accounts are never self-created."""
+    model_config = ConfigDict(extra='forbid', str_strip_whitespace=True)
+    role: AppRoleLiteral
+    username: str = Field(..., min_length=3, max_length=64, pattern=r'^[A-Za-z0-9._-]+$')
+    password: str = Field(..., min_length=10, max_length=256)
+    display_name: str = Field(..., min_length=2, max_length=150)
+    contact_phone: str = Field(..., min_length=6, max_length=20, pattern=r'^\+?[0-9][0-9 ()-]{4,18}[0-9]$')
+    contact_email: Optional[str] = Field(default=None, max_length=150,
+                                         pattern=r'^[^@\s]+@[^@\s]+\.[^@\s]+$')
+    owner_type: Optional[Literal['government', 'ngo', 'private', 'community']] = None
+
+    @field_validator('username')
+    @classmethod
+    def _lower_username(cls, v: str) -> str:
+        return v.lower()
+
+    @field_validator('contact_email', mode='before')
+    @classmethod
+    def _blank_email_is_none(cls, v):
+        return None if isinstance(v, str) and not v.strip() else v
+
+    @model_validator(mode='after')
+    def _checks(self):
+        if self.password.lower() == self.username.lower():
+            raise ValueError('password must not be the same as the username')
+        if not (any(c.isalpha() for c in self.password) and any(c.isdigit() for c in self.password)):
+            raise ValueError('password must contain at least one letter and one digit')
+        if self.role == 'owner' and self.owner_type is None:
+            raise ValueError('owner_type is required for a resource owner account')
+        if self.role != 'owner' and self.owner_type is not None:
+            raise ValueError('owner_type applies only to resource owner accounts')
+        return self
+
+
+class RegisterResponse(BaseModel):
+    user_id: UUID
+    username: str
+    role: AppRoleLiteral
+    status: Literal['active', 'pending_approval']
+    message: str
 
 
 class AuthUserOut(BaseModel):
